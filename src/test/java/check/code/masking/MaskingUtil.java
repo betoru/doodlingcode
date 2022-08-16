@@ -52,13 +52,20 @@ public class MaskingUtil {
         String regex = "(\\d{2,3})-?(\\d{3,4})-?(\\d{4})$";
         Matcher matcher = Pattern.compile(regex).matcher(phoneNumber);
 
+        /*
+            이전 커밋과 비교할 것.
+            중간 번호만 마스킹 처리를 하려는데 중복된 그룹인 경우,
+            모두 바뀌게되어 그룹별로 나눠 중간그룹만 바꿨음.
+         */
         if(matcher.find()) {
-            String target = matcher.group(2);
-            int length = target.length();
+            String group1 = matcher.group(1);
+            String group2 = matcher.group(2);
+            String group3 = matcher.group(3);
+            int length = group2.length();
             char[] c = new char[length];
             Arrays.fill(c, '*');
 
-            return phoneNumber.replace(target, String.valueOf(c));
+            return group1+"-"+group2.replace(group2, String.valueOf(c))+"-"+group3;
         }
         return phoneNumber;
     }

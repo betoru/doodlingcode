@@ -11,17 +11,17 @@ public class MaskingTest {
     @Test
     @DisplayName("이름의 가장 좌우를 제외하고 마스킹이 되나요?")
     void makingNameTest() {
-        String maskingName = MaskingUtil.maskingName("홍길동");
+        String maskingName = MaskingUtil.maskingName("이형근");
         System.out.println("maskingName = " + maskingName);
-        Assertions.assertThat(maskingName).isEqualTo("홍*동");
+        Assertions.assertThat(maskingName).isEqualTo("이*근");
     }
 
     @Test
-    @DisplayName("이름의 가장 좌우를 제외하고 마스킹이 되나요?")
+    @DisplayName("폰번호 마스킹을 해보자. 값이 있는 경우 없는 경우")
     void makingPhoneNumberTest() {
-        String maskedPhoneNumber = MaskingUtil.maskingPhoneNumber("010-1111-2222");
+        String maskedPhoneNumber = MaskingUtil.maskingPhoneNumber("11111111111");
         System.out.println("maskedPhoneNumber = " + maskedPhoneNumber);
-        Assertions.assertThat(maskedPhoneNumber).isEqualTo("010-****-1111");
+        Assertions.assertThat(maskedPhoneNumber).isEqualTo("111-****-1111");
     }
 
 }
