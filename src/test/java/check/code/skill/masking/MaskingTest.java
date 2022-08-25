@@ -1,4 +1,4 @@
-package check.code.masking;
+package check.code.skill.masking;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
