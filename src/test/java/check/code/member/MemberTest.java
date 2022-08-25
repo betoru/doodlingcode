@@ -25,9 +25,9 @@ public class MemberTest {
     @Test
     @DisplayName("기초데이터 test package class")
     void makeDataByTestObject() {
-        Member member = new Member("테스트", "01033333333");
-        ArrayList<Member> members = new ArrayList<>();
-        members.add(member);
+//        Member member = new Member("테스트", "01033333333");
+//        ArrayList<Member> members = new ArrayList<>();
+//        members.add(member);
     }
 
     @Test

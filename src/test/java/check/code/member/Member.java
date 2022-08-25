@@ -1,14 +1,11 @@
 package check.code.member;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class Member {
+    private int id;
     private String name;
-    private String phoneNumber;
-
-    public Member(String name, String phoneNumber) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-    }
 }
