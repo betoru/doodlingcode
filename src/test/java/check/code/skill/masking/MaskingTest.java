@@ -11,9 +11,21 @@ public class MaskingTest {
     @Test
     @DisplayName("이름의 가장 좌우를 제외하고 마스킹이 되나요?")
     void makingNameTest() {
-        String maskingName = MaskingUtil.maskingName("이형근");
+        /*String maskingName = MaskingUtil.maskingName("이형근");
         System.out.println("maskingName = " + maskingName);
-        Assertions.assertThat(maskingName).isEqualTo("이*근");
+        Assertions.assertThat(maskingName).isEqualTo("이*근");*/
+
+        /*String maskingName = MaskingUtil.maskingName("이근");
+        System.out.println("maskingName = " + maskingName);
+        Assertions.assertThat(maskingName).isEqualTo("이*");*/
+
+        /*String maskingName = MaskingUtil.maskingName("엘리자베스");
+        System.out.println("maskingName = " + maskingName);
+        Assertions.assertThat(maskingName).isEqualTo("엘***스");*/
+
+        String maskingName = MaskingUtil.maskingName("엘");
+        System.out.println("maskingName = " + maskingName);
+        Assertions.assertThat(maskingName).isEqualTo("엘");
     }
 
     @Test
