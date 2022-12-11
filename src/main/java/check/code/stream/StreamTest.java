@@ -1,6 +1,5 @@
-package check.code.stream;
+package check.doodlingCode.stream;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,43 +8,46 @@ import static java.util.Arrays.stream;
 
 public class StreamTest {
     public static void main(String[] args) {
-        System.out.println("Test.main");
-        String[] words = new String[]{"1","2","3","4"};
-        String lineWords = "";
-        for (int i = 0; i < words.length; i++) {
-            System.out.println("words["+i+"] = " + words[i]);
-            if(words.length-1 != i){
-                lineWords += words[i] + ":";
+        System.out.println("### StreamTest.main ###");
+
+        System.out.println("=========================== START Test Data Process Of Array ===========================");
+        String[] arrayWords = new String[]{"1","2","3","4"};
+        String arrayWordsResult = "";
+        for (int i = 0; i < arrayWords.length; i++) {
+            if(arrayWords.length-1 != i){
+                arrayWordsResult += arrayWords[i] + ":";
             }else{
-                lineWords += words[i];
+                arrayWordsResult += arrayWords[i];
             }
         }
-        System.out.println("lineWords = " + lineWords);
-        System.out.println("===========================");
+        System.out.println("arrayWordsResult = " + arrayWordsResult);
+        System.out.println("=========================== END Test Data Process Of Array ===========================");
 
-        //java.util.Arrays
-        String result = stream(words).collect(Collectors.joining(":"));
+
+        System.out.println("=========================== START Test Data Process Stream Of Array ===========================");
+        String[] streamWords = new String[]{"1","2","3","4"};
+        String result = stream(streamWords).collect(Collectors.joining(":"));
         System.out.println("result = " + result);
+        System.out.println("=========================== END Test Data Process Stream Of Array ===========================");
 
-        List<String> list = asList("banana", "apple", "momo");
+        List<String> list = asList("banana", "apple", "tomato", "choco");
         for (String s : list) {
             System.out.println("s1 = " + s);
         }
 
-        List<String> list2 = new ArrayList<>(asList("banana", "apple", "tomato", "choco"));
-        for (String s : list2) {
-            System.out.println("s2 = " + s);
-        }
-        // java.util.Collection<E>
-        List<String> strings = list2.stream()
-                .map(element -> element.toUpperCase())
-                .collect(Collectors.toList());
-        System.out.println("strings = " + strings);
+        System.out.println("=========================== START Test Data Process Stream Of List ===========================");
+        List<String> list2 = asList("banana", "apple", "tomato", "choco");
+        List<String> streamList = list2.stream()
+              .map(element -> element.toUpperCase())
+              .sorted()
+              .collect(Collectors.toList());
+        System.out.println("streamList = " + streamList);
 
-        List<String> stringList = list2.stream()
-                .map(String::toUpperCase)
-                .sorted()
-                .collect(Collectors.toList());
-        System.out.println("stringList = " + stringList);
+        List<String> streamList2 = list2.stream()
+              .map(String::toUpperCase)
+              .sorted()
+              .collect(Collectors.toList());
+        System.out.println("streamList2 = " + streamList2);
+        System.out.println("=========================== END Test Data Process Stream Of List ===========================");
     }
 }

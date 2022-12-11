@@ -1,4 +1,4 @@
-package check.code.member;
+package check.doodlingCode.member;
 
 import lombok.Builder;
 import lombok.Data;

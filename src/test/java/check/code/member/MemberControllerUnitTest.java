@@ -1,4 +1,4 @@
-package check.code.member;
+package check.doodlingCode.member;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.DisplayName;

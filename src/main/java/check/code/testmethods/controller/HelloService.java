@@ -1,4 +1,4 @@
-package check.code.testmethods.controller;
+package check.doodlingCode.testmethods.controller;
 
 import org.springframework.stereotype.Service;
 

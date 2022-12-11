@@ -1,15 +1,11 @@
-package check.code.designpattern;
+package designpattern;
 
 import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class User {
     private long idx;
     private String username;
