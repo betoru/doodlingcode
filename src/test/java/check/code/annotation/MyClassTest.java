@@ -1,4 +1,4 @@
-package check.code.annotation;
+package check.doodlingCode.annotation;
 
 import org.junit.jupiter.api.*;
 

@@ -1,4 +1,4 @@
-package check.code.designpattern;
+package designpattern;
 
 import java.util.List;
 

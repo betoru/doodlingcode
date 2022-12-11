@@ -1,4 +1,4 @@
-package check.code.skill.masking;
+package check.code.utils.masking;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package check.code.designpattern;
+package designpattern;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
