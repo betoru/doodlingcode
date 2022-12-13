@@ -1,4 +1,4 @@
-package check.doodlingCode.member;
+package check.code.member;
 
 public class MemberMapper {
 

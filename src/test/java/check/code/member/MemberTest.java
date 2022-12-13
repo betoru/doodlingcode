@@ -1,4 +1,4 @@
-package check.doodlingCode.member;
+package check.code.member;
 
 import lombok.Data;
 import org.junit.jupiter.api.DisplayName;
