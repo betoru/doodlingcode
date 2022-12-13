@@ -1,4 +1,6 @@
-package check.doodlingCode.stream;
+package check.code.stream;
+
+import dto.ArrayData;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,12 +13,12 @@ public class StreamTest {
         System.out.println("### StreamTest.main ###");
 
         System.out.println("=========================== START Test Data Process Of Array ===========================");
-        String[] arrayWords = new String[]{"1","2","3","4"};
+        String[] arrayWords = new String[]{"1", "2", "3", "4"};
         String arrayWordsResult = "";
         for (int i = 0; i < arrayWords.length; i++) {
-            if(arrayWords.length-1 != i){
+            if (arrayWords.length - 1 != i) {
                 arrayWordsResult += arrayWords[i] + ":";
-            }else{
+            } else {
                 arrayWordsResult += arrayWords[i];
             }
         }
@@ -25,7 +27,7 @@ public class StreamTest {
 
 
         System.out.println("=========================== START Test Data Process Stream Of Array ===========================");
-        String[] streamWords = new String[]{"1","2","3","4"};
+        String[] streamWords = new String[]{"1", "2", "3", "4"};
         String result = stream(streamWords).collect(Collectors.joining(":"));
         System.out.println("result = " + result);
         System.out.println("=========================== END Test Data Process Stream Of Array ===========================");
@@ -49,5 +51,10 @@ public class StreamTest {
               .collect(Collectors.toList());
         System.out.println("streamList2 = " + streamList2);
         System.out.println("=========================== END Test Data Process Stream Of List ===========================");
+
+        List<ArrayData> arrayData = asList(
+              new ArrayData("banana", 10, "farm", "Y"),
+              new ArrayData("tomato", 20, "street", "N"));
+        arrayData.stream().map(ele -> ele.getGraduation().equals("Y")).forEach(System.out::println);
     }
 }

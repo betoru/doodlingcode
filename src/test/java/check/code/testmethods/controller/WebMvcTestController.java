@@ -1,4 +1,4 @@
-package check.doodlingCode.testmethods.controller;
+package check.code.testmethods.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

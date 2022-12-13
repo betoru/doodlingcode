@@ -4,9 +4,8 @@ package designpattern.creation.builder.after.staticnested;
  * <p>fileName       : Student</p>
  * <p>author         : baehyoyeol</p>
  * <p>date           : 2022/12/06</p>
- * <p>description    : No Annotation ver.객체를 만들 때 사용하는 빌더테스트 패턴2</p>
- * <p>                 생성패턴은 객체 생성하는 것을 분리함으로써 클라이언트와 결합성을 낮추도록 함.</p>
- * <p>                 반드시 필수로 요구되는 필드외 optional 함을 고려한 방식</p>
+ * <p>description    : 생성패턴은 객체 생성하는 것을 분리함으로써 클라이언트와 결합성을 낮추는 것에 집중함</p>
+ * <p>                 반드시 필수로 요구되는 필드와 optional 함을 고려한 방식</p>
  * <p>                 그런데 빌드와 빌더 간 역종속은 논란의 여지가 있다.</p>
  */
 public class Student {
