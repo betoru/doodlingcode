@@ -1,4 +1,4 @@
-package enumtest;
+package dto.code;
 
 /**
  * fileName       : TestEnum1
