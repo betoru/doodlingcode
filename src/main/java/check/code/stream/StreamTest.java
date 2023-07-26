@@ -1,6 +1,6 @@
 package check.code.stream;
 
-import dto.ArrayData;
+import dto.array.ArrayData;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,5 +56,23 @@ public class StreamTest {
               new ArrayData("banana", 10, "farm", "Y"),
               new ArrayData("tomato", 20, "street", "N"));
         arrayData.stream().map(ele -> ele.getGraduation().equals("Y")).forEach(System.out::println);
+
+        List<ArrayData> arrayData2 = asList(
+              new ArrayData("banana", 10, "farm", "Y"),
+              new ArrayData("tomato", 20, "street", "N"),
+              new ArrayData("apple", 30, "hana", "N"));
+        arrayData2.stream().findFirst().ifPresent(System.out::println);
+
+        List<ArrayData> arrayData3 = asList(
+              new ArrayData("banana", 10, "farm", "Y"),
+              new ArrayData("tomato", 20, "street", "N"),
+              new ArrayData("apple", 30, "hana", "N"));
+        arrayData3.stream().findAny().ifPresent(System.out::println);
+
+        List<ArrayData> arrayData4 = asList(
+              new ArrayData("banana", 10, "farm", "Y"),
+              new ArrayData("tomato", 20, "street", "N"),
+              new ArrayData("apple", 30, "hana", "N"));
+        arrayData4.stream().filter(ele -> ele.getAge() > 10).forEach(System.out::println);
     }
 }

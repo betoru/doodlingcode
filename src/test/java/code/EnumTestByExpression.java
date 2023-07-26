@@ -1,14 +1,15 @@
-package enumtest;
+package code;
 
+import dto.code.TestEnum1;
+import dto.code.TestEnum2;
+import dto.code.TestEnum3;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * fileName       : TestEnum1Test
- * author         : baehyoyeol
- * date           : 2022/11/28
+ * fileName       : TestEnum1Test author         : baehyoyeol date           : 2022/11/28
  * description    :
  */
 class EnumTestByExpression {
@@ -53,6 +54,7 @@ class EnumTestByExpression {
         assertEquals(TestEnum2.RED, TestEnum2.valueOf("RED"));
         assertEquals(TestEnum2.RED.getValue(), TestEnum2.valueOf("RED").getValue());
     }
+
     @Test
     @DisplayName("값 비교 테스트")
     void compareEnum() {
@@ -60,5 +62,17 @@ class EnumTestByExpression {
         Enum<TestEnum2> result = TestEnum2.matchByValue(testValue);
         System.out.println("result = " + result);
         assertEquals(TestEnum2.GREEN, result);
+    }
+
+    @Test
+    @DisplayName("키와 값 형태")
+    void keyAndValue() {
+        TestEnum3[] testEnum3 = TestEnum3.values();
+        System.out.println("testEnum3 = " + testEnum3.toString());
+        for (TestEnum3 enum3 : testEnum3) {
+            System.out.println("enum3 = " + enum3);
+            System.out.println("enum3.getKorName() = " + enum3.getKorName());
+            System.out.println("enum3.getValue() = " + enum3.getValue());
+        }
     }
 }
