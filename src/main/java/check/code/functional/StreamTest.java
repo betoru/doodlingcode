@@ -1,4 +1,4 @@
-package check.code.stream;
+package check.code.functional;
 
 import dto.array.ArrayData;
 
