@@ -3,15 +3,16 @@ package code;
 import dto.code.TestEnum1;
 import dto.code.TestEnum2;
 import dto.code.TestEnum3;
+import util.FruitEnum;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.DoNotMock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * fileName       : TestEnum1Test author         : baehyoyeol date           : 2022/11/28
- * description    :
- */
+import org.assertj.core.api.Assertions;
+
 class EnumTestByExpression {
 
     @Test
@@ -20,9 +21,11 @@ class EnumTestByExpression {
         TestEnum1 testEnum1 = TestEnum1.RED;
         System.out.println("testEnum1 = " + testEnum1);
 
-        /*enum은 클래스이기 때문에 enum 내부에 필드와 메소드를 가질 수 있다.
-        기본적으로 열거한 값들은 public static final이다.
-        또한 정의된 열거체의 첫 번째 상수값은 0부터 설정*/
+        /*
+         * enum은 클래스이기 때문에 enum 내부에 필드와 메소드를 가질 수 있다.
+         * 기본적으로 열거한 값들은 public static final이다.
+         * 또한 정의된 열거체의 첫 번째 상수값은 0부터 설정
+         */
         TestEnum1[] values = TestEnum1.values();
         for (TestEnum1 value : values) {
             System.out.println("value.ordinal() = " + value.ordinal());
@@ -35,20 +38,21 @@ class EnumTestByExpression {
         assertEquals(TestEnum1.INDIGO, TestEnum1.valueOf("INDIGO"));
         assertEquals(TestEnum1.VIOLET, TestEnum1.valueOf("VIOLET"));
 
-
     }
 
     @Test
     @DisplayName("TestEnum2 테스트")
     void customEnum() {
-        /*불규칙한 값을 상수값으로 설정하고 싶으면
-        상수의 이름 옆에 괄호(())을 추가하고,
-        그 안에 원하는 상수값을 명시할 수 있습니다.*/
+        /*
+         * 불규칙한 값을 상수값으로 설정하고 싶으면
+         * 상수의 이름 옆에 괄호(())을 추가하고,
+         * 그 안에 원하는 상수값을 명시할 수 있습니다.
+         */
         TestEnum2[] testEnum2 = TestEnum2.values();
         for (TestEnum2 enum2 : testEnum2) {
             System.out.println("enum2 = " + enum2);
             System.out.println("enum2.getValue() = " + enum2.getValue());
-            //ordinal : 서수표현 첫번째, 두번째, 세번째...
+            // ordinal : 서수표현 첫번째, 두번째, 세번째...
             System.out.println("enum2.ordinal() = " + enum2.ordinal());
         }
         assertEquals(TestEnum2.RED, TestEnum2.valueOf("RED"));
@@ -74,5 +78,13 @@ class EnumTestByExpression {
             System.out.println("enum3.getKorName() = " + enum3.getKorName());
             System.out.println("enum3.getValue() = " + enum3.getValue());
         }
+    }
+
+    @Test
+    @DisplayName("과일 이름으로 과일 enum 찾기")
+    void getFruitEmoji() {
+        String fruitName = "바나나";
+        String fruitEmoji = FruitEnum.matchByKorName(fruitName);
+        Assertions.assertThat(fruitEmoji).isEqualTo("BANANA");
     }
 }

@@ -1,29 +1,34 @@
 package arraylist;
 
-import dto.array.ArrayData;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.management.relation.RoleList;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import dto.array.ArrayData;
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * fileName       : ArrayTest
- * author         : baehyoyeol
- * date           : 2022/12/13
- * description    :
+ * fileName : ArrayTest
+ * author : baehyoyeol
+ * date : 2022/12/13
+ * description :
  */
 @Slf4j
 public class ArrayTest {
     @Test
     @DisplayName("array test")
     void testArray() {
-        int[] intArr = {1, 2, 3, 4, 5};
+        int[] intArr = { 1, 2, 3, 4, 5 };
         log.info("intArr : {}", intArr);
 
         List<Integer> intList = new ArrayList<>();
@@ -33,8 +38,8 @@ public class ArrayTest {
         log.info("intList : {}", intList);
 
         List<ArrayData> arrayDataList = new ArrayList<>();
-        arrayDataList.add(new ArrayData("kim", 10, "street","Y"));
-        arrayDataList.add(new ArrayData("lee", 20, "building","N"));
+        arrayDataList.add(new ArrayData("kim", 10, "street", "Y"));
+        arrayDataList.add(new ArrayData("lee", 20, "building", "N"));
         log.info("arrayDataList : {}", arrayDataList);
         log.info("arrayDataList : {}", arrayDataList.get(0));
 
@@ -61,6 +66,21 @@ public class ArrayTest {
         arrayList.add(map);
         log.info("arrayList = {}", arrayList);
         assertEquals("3", arrayList.get(0).get("c"));
+
+    }
+
+    @Test
+    @DisplayName("instanceof")
+    void instanceTest() {
+
+        ArrayList<Object> arrayList = new ArrayList<>();
+        assertThat(arrayList instanceof List).isTrue();
+
+        RoleList roleList = new RoleList();
+        assertThat(roleList instanceof List).isTrue();
+
+        List<Object> linkedList = new LinkedList<>();
+        assertThat(linkedList instanceof ArrayList).isFalse();
 
     }
 
