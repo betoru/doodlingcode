@@ -24,3 +24,14 @@ fi
 git push origin +branch
 ```
 ---
+
+### git branch 병합 팁
+> 공통작업의 경우 각 서버 브랜치에 공통으로 반영해야 할 경우가 있다.
+> 이럴 경우, 다음과 같이 각 브랜치에 병합을 할 수 있다.
+- branch 변수에 병합 할 브랜치명들을 넣는다.
+- 반복문을 통해 각 브랜치에 병합을 한다.
+- 각 브랜치에 병합 후 push를 한다.
+```bash
+for branch in branch1 branch2 branch3; do git checkout $branch && git merge feature-branch -m "Merging feature-branch into $branch" && git push origin $branch; done
+```
+---
