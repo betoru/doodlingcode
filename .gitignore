@@ -16,7 +16,6 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-!**/src/python/__pycache__/
 
 ### IntelliJ IDEA ###
 .idea
@@ -37,4 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
+### Python ###
 venv/
+src/python/__pycache__/
